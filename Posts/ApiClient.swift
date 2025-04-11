@@ -22,7 +22,7 @@ actor ApiClient {
         self.requestPosts = requestPosts
     }
     
-    public var requestPosts: (FetchPostsRequest) async throws -> [Post]
+    public var requestPosts: @Sendable (FetchPostsRequest) async throws -> [Post]
     
     // Generic method to parse requests
     static func handle <Success: Decodable>(
